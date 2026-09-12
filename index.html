@@ -1,0 +1,1342 @@
+!DOCTYPE html><
+<html lang="en">v
+<head>
+    <meta charset="UTF-8">
+    <meta name="iewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech - Learn Without Limits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        .login-btn {
+            background: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #eef2ff, #ffffff);
+        }
+
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero-text h1 span {
+            color: #4f46e5;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            color: #6b7280;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            border: 2px solid #4f46e5;
+            color: #4f46e5;
+            padding: 13px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-image {
+            width: 42%;
+            background: #4f46e5;
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+        }
+
+        .hero-image .icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        .hero-image h2 {
+            font-size: 30px;
+        }
+
+        /* Stats */
+        .stats {
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 40px 8%;
+        }
+
+        .stat h2 {
+            font-size: 35px;
+            color: #818cf8;
+        }
+
+        /* General sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* Courses */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .course-image {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            background: #e0e7ff;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .course-content p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .course-btn {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Features */
+        .features {
+            background: #eef2ff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #6b7280;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .student {
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .join {
+            text-align: center;
+            background: #4f46e5;
+            color: white;
+        }
+
+        .join h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .join p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: white;
+            color: #4f46e5;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 50px 8%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #374151;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+            }
+
+            .courses,
+            .feature-grid,
+            .testimonials {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .courses,
+            .feature-grid,
+            .testimonials,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">EduTech</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Learn Today.<br><span>Lead Tomorrow.</span></h1>
+
+            <p>
+                Discover high-quality courses, interactive lessons,
+                expert instructors, and smart learning tools designed
+                to help you achieve your goals.
+            </p>
+
+            <a href="#courses" class="cta-btn">Explore Courses</a>
+            <a href="#features" class="secondary-btn">Learn More</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="icon">🎓</div>
+            <h2>Smart Learning</h2>
+            <p>Education powered by technology.</p>
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+    <div class="stats">
+
+        <div class="stat">
+            <h2>50K+</h2>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h2>200+</h2>
+            <p>Courses</p>
+        </div>
+
+        <div class="stat">
+            <h2>100+</h2>
+            <p>Expert Teachers</p>
+        </div>
+
+        <div class="stat">
+            <h2>95%</h2>
+            <p>Success Rate</p>
+        </div>
+
+    </div>
+
+    <!-- Courses -->
+    <section id="courses">
+
+        <div class="section-title">
+            <h2>Popular Courses</h2>
+            <p>Learn valuable skills from expert instructors.</p>
+        </div>
+
+        <div class="courses">
+
+            <div class="course-card">
+                <div class="course-image">💻</div>
+
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>
+                        Learn HTML, CSS, JavaScript and modern
+                        web development from scratch.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">📊</div>
+
+                <div class="course-content">
+                    <h3>Data Science</h3>
+                    <p>
+                        Explore Python, data analysis, machine
+                        learning and artificial intelligence.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">🎨</div>
+
+                <div class="course-content">
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Build beautiful digital experiences and
+                        master modern design principles.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <h2>Why Choose EduTech?</h2>
+            <p>Everything you need for a better learning experience.</p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Learning</h3>
+                <p>
+                    Get personalized recommendations and
+                    learning paths based on your progress.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Expert Teachers</h3>
+                <p>
+                    Learn from experienced professionals
+                    and industry experts.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Learn Anywhere</h3>
+                <p>
+                    Access your lessons from your computer,
+                    tablet, or smartphone.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Certificates</h3>
+                <p>
+                    Earn certificates that demonstrate
+                    your skills and achievements.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Community</h3>
+                <p>
+                    Connect with other learners and
+                    collaborate on exciting projects.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>Track Progress</h3>
+                <p>
+                    Monitor your learning progress and
+                    stay motivated toward your goals.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+
+        <div class="section-title">
+            <h2>What Our Students Say</h2>
+            <p>Thousands of learners are improving their skills with EduTech.</p>
+        </div>
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "EduTech helped me learn web development
+                    from zero. The lessons were simple and
+                    easy to understand."
+                </p>
+
+                <div class="student">— Rahul Sharma</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "The interactive courses and progress
+                    tracking make studying much more enjoyable."
+                </p>
+
+                <div class="student">— Priya Verma</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "I completed my data science course and
+                    used the skills to build my first project."
+                </p>
+
+                <div class="student">— Arjun Singh</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Call to Action -->
+    <section class="join">
+
+        <h2>Start Your Learning Journey</h2>
+
+        <p>
+            Join thousands of students and build the skills
+            you need for the future.
+        </p>
+
+        <a href="#" class="join-btn">Get Started for Free</a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>EduTech</h3>
+
+                <p>
+                    Making quality education accessible,
+                    engaging, and affordable through technology.
+                </p>
+            </div>
+
+            <div>
+                <h3>Platform</h3>
+                <a href="#courses">Courses</a>
+                <a href="#features">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Instructors</a>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">FAQ</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 EduTech. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
+
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #4f46e5;
+        }
+
+        .login-btn {
+            background: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #eef2ff, #ffffff);
+        }
+
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero-text h1 span {
+            color: #4f46e5;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            color: #6b7280;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            border: 2px solid #4f46e5;
+            color: #4f46e5;
+            padding: 13px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-image {
+            width: 42%;
+            background: #4f46e5;
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(79,70,229,0.25);
+        }
+
+        .hero-image .icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        .hero-image h2 {
+            font-size: 30px;
+        }
+
+        /* Stats */
+        .stats {
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 40px 8%;
+        }
+
+        .stat h2 {
+            font-size: 35px;
+            color: #818cf8;
+        }
+
+        /* General sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* Courses */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .course-image {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            background: #e0e7ff;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .course-content p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .course-btn {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Features */
+        .features {
+            background: #eef2ff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #6b7280;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .student {
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .join {
+            text-align: center;
+            background: #4f46e5;
+            color: white;
+        }
+
+        .join h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .join p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: white;
+            color: #4f46e5;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 50px 8%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #374151;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+            }
+
+            .courses,
+            .feature-grid,
+            .testimonials {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .courses,
+            .feature-grid,
+            .testimonials,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">EduTech</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <a href="#" class="login-btn">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Learn Today.<br><span>Lead Tomorrow.</span></h1>
+
+            <p>
+                Discover high-quality courses, interactive lessons,
+                expert instructors, and smart learning tools designed
+                to help you achieve your goals.
+            </p>
+
+            <a href="#courses" class="cta-btn">Explore Courses</a>
+            <a href="#features" class="secondary-btn">Learn More</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="icon">🎓</div>
+            <h2>Smart Learning</h2>
+            <p>Education powered by technology.</p>
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+    <div class="stats">
+
+        <div class="stat">
+            <h2>50K+</h2>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h2>200+</h2>
+            <p>Courses</p>
+        </div>
+
+        <div class="stat">
+            <h2>100+</h2>
+            <p>Expert Teachers</p>
+        </div>
+
+        <div class="stat">
+            <h2>95%</h2>
+            <p>Success Rate</p>
+        </div>
+
+    </div>
+
+    <!-- Courses -->
+    <section id="courses">
+
+        <div class="section-title">
+            <h2>Popular Courses</h2>
+            <p>Learn valuable skills from expert instructors.</p>
+        </div>
+
+        <div class="courses">
+
+            <div class="course-card">
+                <div class="course-image">💻</div>
+
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>
+                        Learn HTML, CSS, JavaScript and modern
+                        web development from scratch.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">📊</div>
+
+                <div class="course-content">
+                    <h3>Data Science</h3>
+                    <p>
+                        Explore Python, data analysis, machine
+                        learning and artificial intelligence.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">🎨</div>
+
+                <div class="course-content">
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Build beautiful digital experiences and
+                        master modern design principles.
+                    </p>
+                    <a href="#" class="course-btn">View Course →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <h2>Why Choose EduTech?</h2>
+            <p>Everything you need for a better learning experience.</p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Learning</h3>
+                <p>
+                    Get personalized recommendations and
+                    learning paths based on your progress.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Expert Teachers</h3>
+                <p>
+                    Learn from experienced professionals
+                    and industry experts.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Learn Anywhere</h3>
+                <p>
+                    Access your lessons from your computer,
+                    tablet, or smartphone.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Certificates</h3>
+                <p>
+                    Earn certificates that demonstrate
+                    your skills and achievements.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <h3>Community</h3>
+                <p>
+                    Connect with other learners and
+                    collaborate on exciting projects.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>Track Progress</h3>
+                <p>
+                    Monitor your learning progress and
+                    stay motivated toward your goals.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+
+        <div class="section-title">
+            <h2>What Our Students Say</h2>
+            <p>Thousands of learners are improving their skills with EduTech.</p>
+        </div>
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "EduTech helped me learn web development
+                    from zero. The lessons were simple and
+                    easy to understand."
+                </p>
+
+                <div class="student">— Rahul Sharma</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "The interactive courses and progress
+                    tracking make studying much more enjoyable."
+                </p>
+
+                <div class="student">— Priya Verma</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "I completed my data science course and
+                    used the skills to build my first project."
+                </p>
+
+                <div class="student">— Arjun Singh</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Call to Action -->
+    <section class="join">
+
+        <h2>Start Your Learning Journey</h2>
+
+        <p>
+            Join thousands of students and build the skills
+            you need for the future.
+        </p>
+
+        <a href="#" class="join-btn">Get Started for Free</a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>EduTech</h3>
+
+                <p>
+                    Making quality education accessible,
+                    engaging, and affordable through technology.
+                </p>
+            </div>
+
+            <div>
+                <h3>Platform</h3>
+                <a href="#courses">Courses</a>
+                <a href="#features">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Instructors</a>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">FAQ</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 EduTech. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
