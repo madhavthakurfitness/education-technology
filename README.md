@@ -1,1 +1,67 @@
 # education-technology
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EduNova - Learn Without Limits</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8faff;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    .logo span {
+      color: #06b6d4;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #172033;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #4f46e5;
+```
